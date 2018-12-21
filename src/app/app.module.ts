@@ -3,13 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+const APP_ID ='angular-universal-firebase';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: APP_ID}),
+    HttpClientModule,
+    FlexLayoutModule,
     AppRoutingModule
   ],
   providers: [],
